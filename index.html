@@ -31,11 +31,23 @@
         
         <h2>Solicita tu Cotización</h2>
         
-        	<form action="https://wa.me/3166504082?text=" method="POST">
+        	
             <input type="text" name="nombre" placeholder="Tu Nombre" required>
             <input type="email" name="email" placeholder="Tu Correo Electrónico" required>
-            <textarea name="mensaje" placeholder="Describe tu problema o necesidad" rows="4" required></textarea>
-            <button type="submit">Enviar</button>
+           
+        
+    
+    <input type="text" id="mensaje" placeholder="Hola, quiero información">
+    <button onclick="enviarWhatsApp()">Enviar a WhatsApp</button>
+
+    <script>
+        function enviarWhatsApp() {
+            let numero = "3166504082"; // Reemplaza con el número de WhatsApp deseado
+            let mensaje = document.getElementById("mensaje").value;
+            let url = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensaje);
+            window.open(url, "_blank");
+        }
+    </script>
         </form>
     </div>
 </body>
